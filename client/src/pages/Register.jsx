@@ -32,28 +32,35 @@ const Register = () => {
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Register page</h1>
       <Form layout='vertical' onFinish={onFinish} className='flex flex-col gap-4'>
-        <Form.Item name='name' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500'>
+        <Form.Item name='name' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500' rules={[{ required: true, message: 'Please enter your name' }]}>
           <input
             type='text'
             className='p-3 border-none rounded-lg focus:outline-none focus:border-blue-500 w-full'
             placeholder='Enter your name'
           />
         </Form.Item>
-        <Form.Item name='phone' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500'>
+        <Form.Item name='email' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500' rules={[{ required: true, message: 'Please enter your email' }, { type: 'email', message: 'Please enter a valid email' }]}>
+          <input
+            type='email'
+            className='p-3 border-none rounded-lg focus:outline-none focus:border-blue-500 w-full'
+            placeholder='Enter your email'
+          />
+        </Form.Item>
+        <Form.Item name='phone' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500' rules={[{ required: true, message: 'Please enter your phone number' }]}>
           <input
             type='number'
             className='border-none p-3 rounded-lg focus:outline-none focus:border-blue-500 w-full'
             placeholder='Enter your phone number'
           />
         </Form.Item>
-        <Form.Item name='password' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500'>
+        <Form.Item name='password' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500' rules={[{ required: true, message: 'Please enter your password' }]}>
           <input
             type='password'
             className='border-none p-3 rounded-lg focus:outline-none focus:border-blue-500 w-full'
             placeholder='Enter your password'
           />
         </Form.Item>
-        <Form.Item name='role' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500'>
+        <Form.Item name='role' className='border p-1 rounded-lg focus:outline-none focus:border-blue-500' rules={[{ required: true, message: 'Please select your role' }]}>
           <Select
             className='w-full'
             placeholder='Select your role'
