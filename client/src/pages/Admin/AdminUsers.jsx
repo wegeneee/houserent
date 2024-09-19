@@ -2,7 +2,7 @@ import React from 'react'
 
 function AdminUsers() {
   return (
-    <div>AdminUsers</div>
+    <div>this page is admin is controll all user block and unblock</div>
   )
 }
 
