@@ -1,40 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { HideLoading, ShowLoading } from '../../redux/alertsSlice';
-import { axiousInstance } from '../../helpers/axiousInstance';
 import { useDispatch } from 'react-redux';
-import { Col, Row, message } from 'antd';
+
 
 
 const UserHome = () => {
     const dispatch = useDispatch();
-    // const [buses, setBuses] = React.useState([]); 
     const [showPopup, setShowPopup] = useState(true);
 
     const handlePopupClose = () => {
         setShowPopup(false);
     };
     // 
-    //     try {
-    //       // Dispatch the ShowLoading action to show the loading indicator
-    //       dispatch(ShowLoading());
-    //       // Make a POST request to the server to get the buses data
-    //       const response = await axiousInstance.post("/api/buses/get-buses", {});
-    //       // Dispatch the HideLoading action to hide the loading indicator
-    //       dispatch(HideLoading());
-    //       // If the response is successful
-    //       if (response.data.success) {
-    //         setBuses(response.data.buses);
-    //       } else {
-    //         message.error(response.data.message);
-    //       }
-    //     } catch (error) {
-    //       dispatch(HideLoading());
-    //       message.error(error.message);
-    //     }
-    //   };
-    //   useEffect(() => {
-    //     getBuses();
-    //   }, []);
+    //   
 
     return (
         <div className="relative">

@@ -10,26 +10,26 @@ function DefaultLayout({ children }) {
   const userMenu = [
     { name: "Home", path: "/user/home", icon: "ri-home-line" },
     { name: "Bookings", path: "/user/Bookings", icon: "ri-file-list-line" },
-    { name: "Notification", path: "/user/Notification", icon: "ri-user-line" },
+    { name: "view Booked",path:"/user/viewBooked",icon:"ri-file-list-line"}, 
+    { name: "wallet", path: "/user/Notification", icon: "ri-wallet-line" },
     { name: "Profile", path: "user/Profile", icon: "ri-user-line" },
     { name: "Logout", path: "/logout", icon: "ri-logout-box-line" }
   ];
 
   const landlordMenu = [
     { name: "Home", path: "/landlord/home", icon: "ri-home-line" },
-    { name: "Houses", path: "/landlord/houses", icon: "ri-home-2-line" },
+    { name: "PostHouses", path: "/landlord/posthouses", icon: "ri-home-2-line" },
     { name: "Tenants", path: "/landlord/tenants", icon: "ri-user-line" },
-    { name: "Notification", path: "/landlord/Notification", icon: "ri-user-line" },
+    { name: "wallet", path: "/landlord/Notification", icon: "ri-wallet-line" },
     { name: "Profile", path: "/landlord/Profile", icon: "ri-user-line" },
     { name: "Logout", path: "/logout", icon: "ri-logout-box-line" }
   ];
 
   const adminMenu = [
     { name: "Home", path: "/admin/home", icon: "ri-home-line" },
-    { name: "Bus", path: "/admin/buses", icon: "ri-bus-line" },
-    { name: "Users", path: "/admin/users", icon: "ri-user-line" },
-    { name: "Bus Booking", path: "admin/bookings", icon: "ri-file-list-line" },
-    { name: "Notification", path: "admin/bookings", icon: "ri-file-list-line" },
+    { name: "AllUsers",path:"/admin/allusers",icon:"ri-file-list-line"},
+    { name: "AllpostHouses",path:"/admin/allposthouses",icon:"ri-file-list-line"}, 
+    { name: "wallet", path: "admin/bookings", icon: "ri-wallet-line" },
     { name: "Logout", path: "/logout", icon: "ri-logout-box-line" }
   ];
 

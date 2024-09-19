@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const authMiddleware = require('../middlewares/authMiddleware');
-const BusModel = require('../models/BusModel');
+// const BusModel = require('../models/BusModel');
 
 //  note in this bellow post and get method authMiddleware is used for auth user(only admin)
 //add bus
