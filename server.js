@@ -11,11 +11,10 @@ app.use(express.json());
 
 // this is used for gate usersModel
 const usersRoute = require("./routes/usersRoute");
-// this is used for gate booking
-const bookingRoute = require("./routes/bookingRoute");
+
 // this is used for api
 app.use("/api/users",usersRoute);
-app.use("/api/bookings",bookingRoute);
+
 
 // this is used fo run server
 app.listen(port,()=>{console.log(`listen on port ${port}` )})
