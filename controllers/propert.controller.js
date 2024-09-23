@@ -44,4 +44,13 @@ const addRoom = async (req, res) => {
   }
 };
 
-module.exports = { addRoom };
+const getHouses = async (req, res) => {
+  try {
+    const houses = await classModel.find();
+    res.status(200).json({ message: "Houses retrieved successfully", success: true, data: houses });
+  } catch (error) {
+    res.status(500).json({ message: error.message, success: false, data: null });
+  }
+}
+
+module.exports = { addRoom,getHouses };
