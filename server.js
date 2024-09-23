@@ -15,9 +15,13 @@ const usersRoute = require("./routes/usersRoute");
 // this is used for gate house Model 
 const houseRoute = require("./routes/houseRoute");
 
+// this is used for gate transaction Model
+const transactionRoute = require("./routes/transactionRoute");
+
 // this is used for api
 app.use("/api/users",usersRoute);
 app.use("/api/property",houseRoute);
+// app.use("/api/transaction",transactionRoute);
 
 
 // this is used fo run server

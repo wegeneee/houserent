@@ -19,6 +19,7 @@ function AddRoom() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Form Data:', formData); // Log the form data
     try {
       const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
       const response = await axios.post('http://localhost:5000/api/property/addRoom', formData, {
