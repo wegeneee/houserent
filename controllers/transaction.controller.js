@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Allusers = require("../models/usersModel");
+const jwt = require('jsonwebtoken');
 const Transaction = require("../models/TransactionModel");
 
 // Refactored transfermoney function
@@ -67,8 +68,34 @@ const getTransactions = async (req, res) => {
         });
     }
 };
+const getUserBalance = async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+          return res.status(401).json({ success: false, message: 'Authorization header not found' });
+        }
+    
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const userId = decoded.userId; // Extract userId from the decoded token
+        console.log('Authenticated userId:', userId); // Add logging
+    
+        const user = await Allusers.findById(userId);
+        console.log('Found user:', user); // Add logging
+    
+        if (!user) {
+          return res.status(404).json({ success: false, message: 'User not found' });
+        }
+    
+        res.json({ success: true, data: { balance: user.balance } });
+      } catch (error) {
+        console.error('Error fetching user balance:', error); // Add logging
+        res.status(500).json({ success: false, message: error.message });
+      }
+};
 
 module.exports = {
     performTransaction,
     getTransactions,
+    getUserBalance,
 };
