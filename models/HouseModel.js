@@ -1,55 +1,37 @@
-const Schema= mongoose.Schema
-const HomeSchema = new Schema({
+const mongoose = require("mongoose");
 
+const houseSchema = new mongoose.Schema({
+  image: {
+    type: String,
+    required: true
+  },
+  address: {
+    type: String,
+    required: true
+  },
+  floorLevel: {
+    type: String,
+    required: true
+  },
+  houseNumber: {
+    type: String,
+    required: true
+  },
+  rentPerMonth: {
+    type: String,
+    required: true
+  },
+  adminPrice: {
+    type: Number,
+    default: 0 // Initial value set to 0
+  },
   ownerUser: {
-        type: mongoose.Schema.ObjectId,
-        ref: "users",
-        required: true,
-      },
-      title: {
-        type: String,
-        required: true,
-      },
-      address: {
-        type: String,
-        required: true,
-      },
-      photos: [{ type: String }],
-      description: {
-        type: String,
-      },
-      perks: [{ type: String }],
-      extraInfo: {
-        type: String,
-      },
-      maxGuests: {
-        type: Number,
-      },
-      price:{
-        type:Number,
-        required:true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users', // Reference to the User model
+    required: true
+  }
+});
 
-    },
-    
-     AdminPrice: {
-        type: Number,
-        default: 0 // Initial value set to 0
-    },
-     allowed:{         /// managed by the system admin
-        type:Boolean,
-        default:false
-    },
-    freeToRent:{      // managed by the landlord 
-        type:Boolean,
-        default:true
-    },
-     
+const HouseModel = mongoose.model("allclass", houseSchema);
 
-
-
-}  ,{timestamps:true})
-
-
-const Rooms = mongoose.model('Rooms', HomeSchema);
-
-export default Rooms;
+module.exports = HouseModel;
